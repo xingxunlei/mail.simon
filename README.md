@@ -1,14 +1,14 @@
 # mail.simon
 java mail 小实例
 
-====================测试方法====================
+## 测试方法
 1.修改config-mail.properties 文件
 2.修改com.xingxunlei 包下的Test.java。
 3.运行Test.java
 
-====================包/文件说明====================
-1. com.xingxunlei.bean
-         邮件发送所需的一些bean
+## 包/文件说明
+1. com.xingxunlei.bean  
+	邮件发送所需的一些bean
 
 1.1 MailAuthenticator.java
 	邮件服务器认证信息Bean
