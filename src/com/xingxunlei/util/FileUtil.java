@@ -14,9 +14,9 @@
 package com.xingxunlei.util;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * ClassName:FileUtil 
@@ -38,11 +38,10 @@ public class FileUtil {
     }
 
     public static String reader(String fileName) {
-        File file = new File(fileName);
         BufferedReader reader = null;
         StringBuffer sbf = new StringBuffer();
         try {
-            reader = new BufferedReader(new FileReader(file));
+            reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName),"UTF-8"));
             String tempString = null;
             while ((tempString = reader.readLine()) != null) {
                 sbf.append(tempString);
