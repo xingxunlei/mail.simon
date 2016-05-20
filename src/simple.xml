@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-body>
+	<html>
+		<head>
+		</head>
+		<body>
+			<div id="main">
+				userName:{0}
+				<br />
+				<a href="http://www.baidu.com">去百度看看</a>
+			</div>
+		</body>
+	</html>
+</xml-body>

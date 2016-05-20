@@ -13,6 +13,10 @@
 
 package com.xingxunlei;
 
+import java.text.MessageFormat;
+
+import com.xingxunlei.util.HtmlUtil;
+
 import com.xingxunlei.bean.MailSenderInfo;
 import com.xingxunlei.util.MailSendUtil;
 
@@ -31,11 +35,14 @@ public class Test {
     
     public static void main(String[] args) {
         MailSenderInfo mailInfo = new MailSenderInfo();
-        String[] to = { "***@126.com" };
+        String[] to = { "***@foxmail.com" };
         mailInfo.setToAddress(to);
-        mailInfo.setSubject("***");
-        String body = "***<a href=\"http://www.baidu.com\">百度</a>***";
-        mailInfo.setContent(body);
+        mailInfo.setSubject("测试一下");
+        String path = "src\\simple.xml";
+        String str = new HtmlUtil().read(path);
+        Object[] obj = new Object[]{"我是大哥大"};
+        str = MessageFormat.format(str, obj);
+        mailInfo.setContent(str);
         System.out.println(MailSendUtil.sendHtmlMail(mailInfo));
     }
 
