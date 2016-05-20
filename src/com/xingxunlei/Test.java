@@ -53,8 +53,9 @@ public class Test {
         str = new FileUtil().read("src\\simple.html");
         obj = new Object[]{"我是html"};
         for(int i=0;i<obj.length;i++){
-            str.replace("{"+i+"}", obj[i].toString());
+            str = str.replace("{"+i+"}", obj[i].toString());
         }
+        mailInfo.setContent(str);
         System.out.println(MailSendUtil.sendHtmlMail(mailInfo));
     }
 
