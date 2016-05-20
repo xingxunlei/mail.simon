@@ -13,6 +13,8 @@
 
 package com.xingxunlei;
 
+import com.xingxunlei.util.FileUtil;
+
 import java.text.MessageFormat;
 
 import com.xingxunlei.util.XmlUtil;
@@ -37,12 +39,22 @@ public class Test {
         MailSenderInfo mailInfo = new MailSenderInfo();
         String[] to = { "***@foxmail.com" };
         mailInfo.setToAddress(to);
-        mailInfo.setSubject("测试一下");
-        String path = "src\\simple.xml";
-        String str = new XmlUtil().read(path);
-        Object[] obj = new Object[]{"我是大哥大"};
+        
+        // 测试xml
+        mailInfo.setSubject("测试一下xml");
+        String str = new XmlUtil().read("src\\simple.xml");
+        Object[] obj = new Object[]{"我是xml"};
         str = MessageFormat.format(str, obj);
         mailInfo.setContent(str);
+        System.out.println(MailSendUtil.sendHtmlMail(mailInfo));
+        
+        // 测试html
+        mailInfo.setSubject("测试一下html");
+        str = new FileUtil().read("src\\simple.html");
+        obj = new Object[]{"我是html"};
+        for(int i=0;i<obj.length;i++){
+            str.replace("{"+i+"}", obj[i].toString());
+        }
         System.out.println(MailSendUtil.sendHtmlMail(mailInfo));
     }
 
