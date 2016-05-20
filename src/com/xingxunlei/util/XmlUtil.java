@@ -1,5 +1,5 @@
 /**
- * HtmlUtil.java
+ * XmlUtil.java
  * com.xingxunlei.util
  *
  * Function： 读取xml模板文件内容
@@ -20,8 +20,8 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 /**
- * ClassName:HtmlUtil 
- * Function:  
+ * ClassName:XmlUtil
+ * Function:  读取xml模板文件内容
  * 
  * @author Simon
  * @version
@@ -30,7 +30,7 @@ import org.dom4j.io.SAXReader;
  * 
  * @see
  */
-public class HtmlUtil {
+public class XmlUtil {
 
     public String read(String path) {
         String str = null;

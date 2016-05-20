@@ -15,7 +15,7 @@ package com.xingxunlei;
 
 import java.text.MessageFormat;
 
-import com.xingxunlei.util.HtmlUtil;
+import com.xingxunlei.util.XmlUtil;
 
 import com.xingxunlei.bean.MailSenderInfo;
 import com.xingxunlei.util.MailSendUtil;
@@ -39,7 +39,7 @@ public class Test {
         mailInfo.setToAddress(to);
         mailInfo.setSubject("测试一下");
         String path = "src\\simple.xml";
-        String str = new HtmlUtil().read(path);
+        String str = new XmlUtil().read(path);
         Object[] obj = new Object[]{"我是大哥大"};
         str = MessageFormat.format(str, obj);
         mailInfo.setContent(str);
