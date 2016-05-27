@@ -13,14 +13,11 @@
 
 package com.xingxunlei;
 
-import com.xingxunlei.util.FileUtil;
-
-import java.text.MessageFormat;
-
-import com.xingxunlei.util.XmlUtil;
-
 import com.xingxunlei.bean.MailSenderInfo;
+import com.xingxunlei.util.FileUtil;
 import com.xingxunlei.util.MailSendUtil;
+import com.xingxunlei.util.XmlUtil;
+import java.text.MessageFormat;
 
 /**
  * ClassName:Test
@@ -50,7 +47,7 @@ public class Test {
         
         // 测试html
         mailInfo.setSubject("测试一下html");
-        str = new FileUtil().read("src\\simple.html");
+        str = FileUtil.read("src\\simple.html");
         obj = new Object[]{"我是html"};
         for(int i=0;i<obj.length;i++){
             str = str.replace("{"+i+"}", obj[i].toString());

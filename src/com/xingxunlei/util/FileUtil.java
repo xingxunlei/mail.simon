@@ -31,7 +31,7 @@ import java.io.InputStreamReader;
  */
 public class FileUtil {
 
-    public String read(String path) {
+    public static String read(String path) {
         String str = null;
         str = reader(path);
         return str;
